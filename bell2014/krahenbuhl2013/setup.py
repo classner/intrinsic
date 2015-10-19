@@ -1,4 +1,4 @@
-from distutils.core import setup
+from setuptools import setup
 from distutils.extension import Extension
 try:
     from Cython.Build import cythonize
@@ -9,6 +9,8 @@ except ImportError:
     sys.exit(1)
 
 setup(
+    name='krahenbuhl2013',
+    version='0.1',
     ext_modules=cythonize(Extension(
         'krahenbuhl2013',
         sources=[
